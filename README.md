@@ -10,7 +10,7 @@
 > ## How to use
 > Working example can be seen in my [ft_printf](https://github.com/mordori/ft_printf) project. 
 - Clone the repository on the root level of your project.
-- Run the following command in `libft/` directory to create `libft.a` at root.
+- Run the following command to create `libft.a`.
 ``` Makefile
 make
 ```
