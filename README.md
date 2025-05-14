@@ -9,13 +9,16 @@
 > [!TIP]
 > ## How to use
 > Working example can be seen in my [ft_printf](https://github.com/mordori/ft_printf) project. 
-- Clone the repository on the root level of your project.
+- Clone the repository at the root level of your project.
 - Run the following command to create `libft.a`.
 ``` Makefile
 make
 ```
-- Include `"libft/libft.h"` with appropriate path where used, or add `-I.libft` flag to the following step.
-- Compile `libft.a` together with your program to use it in your own project.
+- Include `"libft.h"` to your .c files or headers where used.
+- Compile your program together with `-I.libft` and `-lft` flags to use the library in your own project, e.g.
+``` bash
+cc -Wall -Wextra -Werror -I.libft -lft main.c
+```
 - You can modify the Makefile in the root directory to compile and copy `libft.a` into your own library by modifying `NAME` and `SRCS`.
 - To delete all of the compiled files, use:
 ``` Makefile
