@@ -1,0 +1,8 @@
+.vscode/
+obj/
+
+*.o
+
+libft.a
+libftprintf.a
+a.out
