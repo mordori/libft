@@ -6,11 +6,53 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/14 17:48:49 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/18 03:34:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static inline char	*ft_ptrformat(char *s);
+static inline char	*ft_strformat(const char c, va_list *args);
+static inline ssize_t	ft_strprint(const char c, va_list *args);
+
+/**
+ * Formats and prints string `s` with variable type argument list.
+ *
+ * Supported data type conversions:
+ *
+ * c s d i u x X p %
+ *
+ * @param s Source string.
+ * @return Number of bytes written, summed from characters written from `s`
+ * and the type conversions. Returns -1 on error.
+ */
+int	ft_printf(const char *s, ...)
+{
+	va_list	args;
+	ssize_t	totalbytes;
+	ssize_t	bytes;
+
+	if (!s)
+		return (-1);
+	va_start(args, s);
+	totalbytes = 0;
+	while (*s)
+	{
+		if (*s++ == '%')
+			bytes = ft_strprint(*s++, &args);
+		else
+			bytes = ft_putchar_fd(*(s - 1), STDOUT_FILENO);
+		if (bytes == -1)
+		{
+			totalbytes = -1;
+			break ;
+		}
+		totalbytes += bytes;
+	}
+	va_end(args);
+	return ((int)totalbytes);
+}
 
 /**
  * Formats pointer address. Expects string 's' as hexadecimal number.
@@ -91,42 +133,4 @@ static inline ssize_t	ft_strprint(const char c, va_list *args)
 		bytes = ft_putstr_fd(str, STDOUT_FILENO);
 	free(str);
 	return (bytes);
-}
-
-/**
- * Formats and prints string `s` with variable type argument list.
- *
- * Supported data type conversions:
- *
- * c s d i u x X p %
- *
- * @param s Source string.
- * @return Number of bytes written, summed from characters written from `s`
- * and the type conversions. Returns -1 on error.
- */
-int	ft_printf(const char *s, ...)
-{
-	va_list	args;
-	ssize_t	totalbytes;
-	ssize_t	bytes;
-
-	if (!s)
-		return (-1);
-	va_start(args, s);
-	totalbytes = 0;
-	while (*s)
-	{
-		if (*s++ == '%')
-			bytes = ft_strprint(*s++, &args);
-		else
-			bytes = ft_putchar_fd(*(s - 1), STDOUT_FILENO);
-		if (bytes == -1)
-		{
-			totalbytes = -1;
-			break ;
-		}
-		totalbytes += bytes;
-	}
-	va_end(args);
-	return ((int)totalbytes);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:27:32 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/18 03:20:06 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	new = ft_calloc(1, sizeof (t_list));
+	new = malloc(sizeof (t_list));
 	if (!new)
 		return (NULL);
 	new->content = content;

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:20:10 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:45:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/18 03:29:36 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	str = ft_calloc(ft_strlen(s) + 1, sizeof (char));
+	str = malloc((ft_strlen(s) + 1) * sizeof (char));
 	if (!str)
 		return (NULL);
 	i = -1;
 	while (s[++i])
 		str[i] = f(i, s[i]);
+	str[i] = '\0';
 	return (str);
 }

@@ -6,21 +6,29 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/14 18:27:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/18 03:51:15 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>	// malloc(), free(), NULL, size_t
 # include <limits.h>	// INT_MAX, INT_MIN
-# include <stdint.h>	// SIZE_MAX
-# include <unistd.h>	// write(), ssize_t, STDOUT_FILENO
 # include <stdarg.h>	// va_list, va_start, va_arg, va_end
+# include <stdint.h>	// SIZE_MAX
+# include <stdlib.h>	// malloc(), free(), NULL, size_t
+# include <unistd.h>	// write(), ssize_t, STDOUT_FILENO, read
 
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 8
+# endif
 
 typedef struct s_list
 {
@@ -28,7 +36,9 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-int		ft_validatebase(const char *base);
+char	*ft_strjoin_free(char *s1, char *s2);
+char	*get_next_line(int fd);
+int		ft_strchrdup(const char *base);
 size_t	ft_countdigits(long long n, const size_t len);
 size_t	ft_ucountdigits(uintptr_t n, const size_t len);
 char	*ft_uitoa(uintptr_t n, const char *base);
