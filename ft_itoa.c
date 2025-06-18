@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:42:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:45:33 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/18 19:03:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_itoa(int n, const char *base)
 	size_t	digits;
 	size_t	len;
 
-	if (!ft_validatebase(base))
+	if (!ft_strchrdup(base))
 		return (NULL);
 	len = ft_strlen(base);
 	sign = 1;
