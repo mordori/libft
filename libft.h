@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 19:28:02 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:34:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"
+# define FALSE 0
+# define TRUE 1
+# define VEC_SIZE 4
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
@@ -35,6 +38,21 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_vec
+{
+	void	**items;
+	int		size;
+	int		total;
+}				t_vec;
+
+int	vec_init(t_vec *vec);
+int		vec_total(t_vec *vec);
+int	vec_add(t_vec *vec, void *item);
+void	vec_set(t_vec *vec, int index, void *item);
+void	*vec_get(t_vec *vec, int index);
+int	vec_del(t_vec *vec, int index);
+void	vec_free(t_vec *vec);
 
 char	*ft_strjoin_free(char *s1, char *s2);
 char	*get_next_line(int fd);
