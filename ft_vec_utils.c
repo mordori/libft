@@ -6,23 +6,26 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/26 19:02:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/28 20:10:11 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int vec_resize(t_vec *vec, int size)
+static int vec_resize(t_vec *vec, size_t size)
 {
 	void	**items;
-	int		i;
+	size_t	i;
 
 	items = malloc(sizeof (void *) * size);
 	if (!items)
 		return (FALSE);
-	i = -1;
-	while (++i < vec->size)
+	i = 0;
+	while (i < vec->total)
+	{
 		items[i] = vec->items[i];
+		++i;
+	}
 	free(vec->items);
 	vec->items = items;
 	vec->size = size;
@@ -31,39 +34,53 @@ static int vec_resize(t_vec *vec, int size)
 
 int	vec_add(t_vec *vec, void *item)
 {
-	if (vec->size == vec->total)
-	{
-		if (vec_resize(vec, vec->size * 2))
-		{
-			vec->items[vec->total++] = item;
-			return (TRUE);
-		}
+	if (!vec)
 		return (FALSE);
-	}
+	if (vec->total == vec->size)
+		if (!vec_resize(vec, vec->size * 2))
+			return (FALSE);
 	vec->items[vec->total++] = item;
 	return (TRUE);
 }
 
-int	vec_del(t_vec *vec, int index)
+int	vec_del(t_vec *vec, size_t index)
 {
-	int	i;
-
-	if (index < 0 || index >= vec->total)
+	if (!vec || index >= vec->total)
 		return (FALSE);
-	i = index;
-	vec->items[i] = NULL;
-	while (i < vec->total - 1)
+	if (vec->is_heap)
 	{
-		vec->items[i] = vec->items[i + 1];
-		vec->items[i + 1] = NULL;
-		i++;
+		free(vec->items[index]);
+		vec->items[index] = NULL;
+	}
+	while (index < vec->total - 1)
+	{
+		vec->items[index] = vec->items[index + 1];
+		++index;
 	}
 	vec->total--;
-	if (vec->total > 0 && vec->total == vec->size / 4)
-	{
-		if (vec_resize(vec, vec->size / 2))
-			return (TRUE);
-		return (FALSE);
-	}
+	if (vec->size > VEC_SIZE && vec->total > 0 && vec->total == vec->size / 4)
+		if (!vec_resize(vec, vec->size / 2))
+			return (FALSE);
 	return (TRUE);
+}
+
+void	vec_free(t_vec *vec)
+{
+	size_t	i;
+
+	if (!vec)
+		return ;
+	i = 0;
+	if (vec->is_heap)
+	{
+		while (i < vec->total)
+		{
+			free(vec->items[i]);
+			vec->items[i++] = NULL;
+		}
+	}
+	free(vec->items);
+	vec->total = 0;
+	vec->size = 0;
+	vec->items = NULL;
 }

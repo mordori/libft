@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/26 17:34:26 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/28 20:16:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,19 @@ typedef struct s_list
 typedef struct s_vec
 {
 	void	**items;
-	int		size;
-	int		total;
+	size_t	size;
+	size_t	total;
+	int		is_heap;
 }				t_vec;
 
-int	vec_init(t_vec *vec);
+int		vec_init(t_vec *vec, int is_heap);
 int		vec_total(t_vec *vec);
-int	vec_add(t_vec *vec, void *item);
-void	vec_set(t_vec *vec, int index, void *item);
-void	*vec_get(t_vec *vec, int index);
-int	vec_del(t_vec *vec, int index);
+int		vec_size(t_vec *vec);
+int		vec_add(t_vec *vec, void *item);
+void	vec_set(t_vec *vec, size_t index, void *item);
+void	*vec_get(t_vec *vec, size_t index);
+int		vec_del(t_vec *vec, size_t index);
 void	vec_free(t_vec *vec);
-
 char	*ft_strjoin_free(char *s1, char *s2);
 char	*get_next_line(int fd);
 int		ft_strchrdup(const char *base);

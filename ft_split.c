@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:26:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/28 19:47:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,11 @@ char	**ft_split(char const *s, char c)
 	{
 		word_len = ft_word_len(&s, c);
 		strs[i] = ft_substr(s - word_len, 0, word_len);
-		if (!strs[i])
+		if (!strs[i++])
 		{
 			ft_free_strs(strs);
 			return (NULL);
 		}
-		++i;
 	}
 	strs[i] = NULL;
 	return (strs);
@@ -115,11 +114,11 @@ static inline void	ft_free_strs(char **strs)
 {
 	int	i;
 
-	i = -1;
-	while (strs[++i])
+	i = 0;
+	while (strs[i])
 	{
 		free(strs[i]);
-		strs[i] = NULL;
+		strs[i++] = NULL;
 	}
 	free(strs);
 	strs = NULL;

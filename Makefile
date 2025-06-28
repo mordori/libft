@@ -6,14 +6,14 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/06/26 17:46:49 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/06/28 21:03:38 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL = all
 NAME = ../libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD -MP
 MAKEFLAGS += --no-print-directory
 
 SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
@@ -31,6 +31,7 @@ SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 		ft_countdigits.c ft_strchrdup.c ft_get_next_line.c ft_vec.c \
 		ft_vec_utils.c
 OBJS = $(SRCS:.c=.o)
+DEPS = $(SRCS:.c=.d)
 
 all: lib $(NAME) clean
 
@@ -43,6 +44,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
+	@rm -rf $(DEPS)
 
 fclean: clean
 	@rm -rf $(NAME)
@@ -54,3 +56,6 @@ lib:
 	@echo "\033[1;32m [+]\033[0m compiling libft.a"
 
 .PHONY: all clean fclean re lib
+.SECONDARY: $(OBJS) $(DEPS)
+
+-include $(DEPS)
