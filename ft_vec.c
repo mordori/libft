@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:41:07 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:26:27 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*vec_get(t_vec *vec, size_t index)
 	if (!vec)
 		return (NULL);
 	if (index < vec->total)
-		return vec->items[index];
+		return (vec->items[index]);
 	return (NULL);
 }
 
@@ -50,7 +50,7 @@ int	vec_total(t_vec	*vec)
 {
 	if (!vec)
 		return (0);
-	return vec->total;
+	return (vec->total);
 }
 
 int	vec_size(t_vec *vec)

@@ -6,13 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:10:11 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:26:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int vec_resize(t_vec *vec, size_t size)
+static int	vec_resize(t_vec *vec, size_t size)
 {
 	void	**items;
 	size_t	i;

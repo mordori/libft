@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:14:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 21:16:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:25:31 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static inline char	*join_lines(char *line, const char *buf)
 {
 	char	*new_line;
 
-	new_line =  extract_line(buf);
+	new_line = extract_line(buf);
 	if (!new_line)
 		return (NULL);
 	return (ft_strjoin_free(line, new_line));
