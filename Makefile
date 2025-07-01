@@ -6,21 +6,23 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/01 23:35:38 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/02 01:41:35 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS	+= --no-print-directory
-NAME		= libft.a
+NAME		=libft.a
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -Wunreachable-code -Wunused-result -O3 -MMD -MP
+CC			=cc
+CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -Wunused-result -O3 -MMD -MP
 
-DIR_INC		= ./include/
-DIR_SRC		= ./src/
+DIR_INC		=include/
+DIR_SRC		=src/
+DIR_OBJ		=obj/
+DIR_DEP		=dep/
 
-HEADERS		= -I $(DIR_INC)
-SRCS		= $(addprefix $(DIR_SRC), \
+HEADERS		=-I $(DIR_INC)
+SRCS		=$(addprefix $(DIR_SRC), \
 			ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 			ft_bzero.c ft_isascii.c ft_memchr.c ft_memset.c ft_toupper.c \
 			ft_calloc.c ft_isdigit.c ft_memcmp.c ft_putchar_fd.c \
@@ -35,29 +37,31 @@ SRCS		= $(addprefix $(DIR_SRC), \
 			ft_lstnew_bonus.c ft_lstsize_bonus.c ft_printf.c ft_uitoa.c \
 			ft_countdigits.c ft_strchrdup.c ft_get_next_line.c ft_vec.c \
 			ft_vec_utils.c)
-OBJS		= $(SRCS:.c=.o)
-DEPS		= $(SRCS:.c=.d)
+OBJS		=$(patsubst $(DIR_SRC)%.c, $(DIR_OBJ)%.o, $(SRCS))
+DEPS		=$(patsubst $(DIR_SRC)%.c, $(DIR_DEP)%.d, $(SRCS))
 
-YELLOW		= \033[1;33m
-GREEN		= \033[1;32m
-RED			= \033[1;31m
-COLOR		= \033[0m
+YELLOW		=\033[1;33m
+GREEN		=\033[1;32m
+RED			=\033[1;31m
+COLOR		=\033[0m
 
-all: lib $(NAME) clean
+all: $(DIR_OBJ) $(NAME)
 
-lib:
+$(DIR_OBJ):
+	@mkdir -p $(DIR_LIB) $(DIR_OBJ) $(DIR_DEP)
 	@echo "$(GREEN) [+]$(COLOR) compiling libft.a"
 
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 	@echo "$(YELLOW) [✔] libft.a created $(COLOR)"
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
+$(DIR_OBJ)%.o: $(DIR_SRC)%.c
+	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS)
 
 clean:
-	@rm -rf $(OBJS)
-	@rm -rf $(DEPS)
+	@rm -rf $(DIR_OBJ) $(DIR_DEP)
+	@echo "$(RED) [-]$(COLOR) removed $(DIR_OBJ)"
+	@echo "$(RED) [-]$(COLOR) removed $(DIR_DEP)"
 
 fclean: clean
 	@rm -rf $(NAME)
@@ -65,7 +69,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re lib
+.PHONY: all clean fclean re
 .SECONDARY: $(OBJS) $(DEPS)
 
 -include $(DEPS)
