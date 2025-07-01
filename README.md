@@ -10,14 +10,14 @@
 > ## How to use
 > Working example can be seen in my [ft_printf](https://github.com/mordori/ft_printf) project where another Makefile compiles this library. 
 - Clone the repository at the root level of your project.
-- Run the following command to create `libft.a` at the root.
+- Run the following command to create `libft.a`.
 ``` Makefile
 make
 ```
-- Include `"libft/libft.h"` to your .c files or headers where used.
-- Compile your program together with `libft.a` to use the library in your own project, e.g.
+- Add `#include "libft.h"` to your files where used and `-I ./libft/include/` flag to your compilation.
+- Compile your program together with `./libft/libft.a`, e.g.
 ``` bash
-cc -Wall -Wextra -Werror main.c libft.a
+cc -Wall -Wextra -Werror main.c ./libft/libft.a -I ./libft/include/
 ```
 - To delete all of the compiled files, use:
 ``` Makefile
