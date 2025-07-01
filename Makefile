@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/02 01:41:35 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/02 01:48:58 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,8 +60,8 @@ $(DIR_OBJ)%.o: $(DIR_SRC)%.c
 
 clean:
 	@rm -rf $(DIR_OBJ) $(DIR_DEP)
-	@echo "$(RED) [-]$(COLOR) removed $(DIR_OBJ)"
-	@echo "$(RED) [-]$(COLOR) removed $(DIR_DEP)"
+	@echo "$(RED) [-]$(COLOR) removed libft/$(DIR_OBJ)"
+	@echo "$(RED) [-]$(COLOR) removed libft/$(DIR_DEP)"
 
 fclean: clean
 	@rm -rf $(NAME)
