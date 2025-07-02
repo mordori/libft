@@ -20,12 +20,12 @@ make
 ```
 - Add `#include "libft.h"` to your files where used:
 ``` C
-#include <libft.h>
+#include "libft.h"
 ```
 > [!TIP]
 > For more granular inclusion, only add `#include "libft_[CATEGORY].h"` to your files where used. The header categories are found in the include/ directory. For example:
 > ``` C
-> #include <libft_io.h>
+> #include "libft_io.h"
 > ...
 > ft_printf("Hello! There are %d %s in my fridge.\n", 4, "puddings");
 > ...
