@@ -6,11 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/30 12:59:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:11:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdint.h>
+#include <stdlib.h>
+
+#include "libft_mem.h"
 
 /**
  * Allocates memory for `nmemb` elements of `size` bytes, initialized with \0.

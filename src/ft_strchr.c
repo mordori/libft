@@ -6,11 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:49:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:48:46 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:43:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+
+#include "libft_str.h"
 
 /**
  * Attempts to find the first occurrance of character `c` in `s`.

@@ -6,11 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 19:47:18 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:41:45 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_str.h"
 
 static inline size_t	ft_count_words(char const *s, char c);
 static inline size_t	ft_word_len(char const **s, char c);

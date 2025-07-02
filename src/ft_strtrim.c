@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:43:13 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:56:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Allocates memory and copies string `s1` with characters from

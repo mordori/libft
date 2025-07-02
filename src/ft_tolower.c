@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:40:50 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 00:32:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:08:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_utils.h"
 
 /**
  * Converts uppercase alphabet character `A-Z` to lowercase.

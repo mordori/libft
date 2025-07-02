@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   libft_io.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:37:26 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:16:17 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/07/02 14:33:27 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/07/02 16:02:00 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_list.h"
+#ifndef LIBFT_IO_H
+# define LIBFT_IO_H
 
-/**
- * Adds the node `new` at the end of the list.
- *
- * @param lst Address of pointer to the head node of the list.
- * @param new Pointer to the node to be added.
- */
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*temp;
+# include <unistd.h>
 
-	if (!lst)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = new;
-}
+# include "libft_defs.h"
+
+char	*get_next_line(int fd);
+int		ft_printf(const char *str, ...);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+
+#endif

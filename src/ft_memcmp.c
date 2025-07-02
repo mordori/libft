@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:47:55 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:47:46 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:20:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_mem.h"
 
 /**
  * Compares `n` bytes of the memory areas `s1` and `s2`.

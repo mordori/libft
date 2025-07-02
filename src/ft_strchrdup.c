@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validatebase.c                                  :+:      :+:    :+:   */
+/*   ft_strchrdup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:24:02 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:50:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:43:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Checks if the string `str` has no duplicate characters.

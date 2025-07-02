@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:43:29 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:52:58 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:11:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_utils.h"
 
 /**
  * Checks if `c` is a numeric character.

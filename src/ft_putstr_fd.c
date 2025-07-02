@@ -6,11 +6,12 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:59:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 18:03:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:34:39 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_io.h"
+#include "libft_str.h"
 
 /**
  * Outputs string `s` to the specified file descriptor.
@@ -25,10 +26,10 @@ ssize_t	ft_putstr_fd(char *s, int fd)
 	size_t	len;
 
 	if (!s)
-		return (-1);
+		return (ERROR);
 	len = ft_strlen(s);
 	bytes = write (fd, s, len);
 	if (bytes < (ssize_t)len)
-		return (-1);
+		return (ERROR);
 	return (bytes);
 }

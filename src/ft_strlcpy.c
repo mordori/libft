@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:19:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/05 18:24:20 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:45:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Copies up to `size-1` characters from the string `src` to the string `dst`.

@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:51:45 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:48:30 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:20:51 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_mem.h"
 
 /**
  * Fills `n` bytes of the memory area `s` with byte `c`.

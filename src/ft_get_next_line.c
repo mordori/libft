@@ -6,11 +6,15 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:14:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/30 17:25:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:00:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_io.h"
+#include "libft_mem.h"
+#include "libft_str.h"
 
 static inline char	*join_lines(char *line, const char *buf);
 static inline char	*extract_line(const char *buf);

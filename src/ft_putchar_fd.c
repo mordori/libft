@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:45:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 17:12:36 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:30:51 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_io.h"
 
 /**
  * Outputs character `c` to the specified file descriptor.

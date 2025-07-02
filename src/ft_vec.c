@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/30 17:26:27 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:10:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_vec.h"
 
 int	vec_init(t_vec *vec, int is_heap)
 {

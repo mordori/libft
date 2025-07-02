@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:21:49 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/14 18:32:32 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:07:29 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_utils.h"
 
 /**
  * Counts the number of digits in `n` with a specified base.

@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 21:13:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/01 23:28:39 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:02:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <limits.h>
+
+#include "libft_io.h"
 
 /**
  * Outputs integer `n` to the specified file descriptor.
@@ -29,14 +31,15 @@ int	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		if (write (fd, "-", 1) == -1)
-			return (FALSE);
+		if (write (fd, "-", 1) == ERROR)
+			return (ERROR);
 		n = -n;
 	}
 	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
+		if (ft_putnbr_fd(n / 10, fd) == ERROR)
+			return (ERROR);
 	c = n % 10 + '0';
-	if (write (fd, &c, 1) == -1)
-		return (FALSE);
+	if (write (fd, &c, 1) == ERROR)
+		return (ERROR);
 	return (TRUE);
 }

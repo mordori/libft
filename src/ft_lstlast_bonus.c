@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:33:28 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 15:54:22 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:07:07 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_list.h"
 
 /**
  * Traverses through `lst` and finds the last node.

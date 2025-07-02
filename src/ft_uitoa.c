@@ -6,11 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:19:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 19:28:20 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:08:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_utils.h"
+#include "libft_str.h"
 
 /**
  * Converts the unsigned integer `n` of `base` to a newly allocated string.

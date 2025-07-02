@@ -6,11 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:26:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:39:14 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:00:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_str.h"
+#include "libft_mem.h"
 
 /**
  * Allocates memory and returns a substring from the string `s`.

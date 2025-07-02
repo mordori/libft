@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 19:50:11 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:44:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Applies function `f` to each character of string `s`.

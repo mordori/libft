@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:10:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:50:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:56:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Attempts to find the last occurrance of character `c` in `s`.

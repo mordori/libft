@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_utils.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 14:46:28 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/07/02 16:03:51 by myli-pen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_UTILS_H
+# define LIBFT_UTILS_H
+
+# include <stddef.h>
+# include <stdint.h>
+
+# include "libft_defs.h"
+
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_atoi(const char *nptr);
+int		ft_toupper(char *c);
+int		ft_tolower(char *c);
+int		ft_strchrdup(const char *base);
+size_t	ft_countdigits(long long n, const size_t len);
+size_t	ft_ucountdigits(uintptr_t n, const size_t len);
+char	*ft_uitoa(uintptr_t n, const char *base);
+char	*ft_itoa(int n, const char *base);
+
+#endif

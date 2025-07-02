@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:16:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 14:39:52 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:11:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_utils.h"
 
 /**
  * Checks if `c` is part of the standard ASCII character set.

@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:58:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:50:26 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:56:33 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Locates string `little` in string `big`,

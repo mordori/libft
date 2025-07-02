@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:34:04 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:54:55 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:46:13 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Compares `n` characters of the strings `s1` and `s2`.

@@ -6,11 +6,17 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:34:35 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:12:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdarg.h>
+#include <stdlib.h>
+
+#include "libft_io.h"
+#include "libft_mem.h"
+#include "libft_str.h"
+#include "libft_utils.h"
 
 static inline char	*ft_ptrformat(char *s);
 static inline char	*ft_strformat(const char c, va_list *args);
@@ -34,7 +40,7 @@ int	ft_printf(const char *s, ...)
 	ssize_t	bytes;
 
 	if (!s)
-		return (-1);
+		return (ERROR);
 	va_start(args, s);
 	totalbytes = 0;
 	while (*s)
@@ -43,9 +49,9 @@ int	ft_printf(const char *s, ...)
 			bytes = ft_strprint(*s++, &args);
 		else
 			bytes = ft_putchar_fd(*(s - 1), STDOUT_FILENO);
-		if (bytes == -1)
+		if (bytes == ERROR)
 		{
-			totalbytes = -1;
+			totalbytes = ERROR;
 			break ;
 		}
 		totalbytes += bytes;
@@ -123,10 +129,10 @@ static inline ssize_t	ft_strprint(const char c, va_list *args)
 	ssize_t	bytes;
 
 	if (!args)
-		return (-1);
+		return (ERROR);
 	str = ft_strformat(c, args);
 	if (!str)
-		return (-1);
+		return (ERROR);
 	if (c == 'c')
 		bytes = ft_putchar_fd(*str, STDOUT_FILENO);
 	else

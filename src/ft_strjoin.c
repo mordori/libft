@@ -6,11 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:08:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/18 03:37:43 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:59:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_str.h"
+#include "libft_mem.h"
 
 /**
  * Allocates memory and copies characters from strings `s1` and `s2`.

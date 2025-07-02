@@ -6,11 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/06/28 19:56:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:07:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+#include "libft_list.h"
 
 /**
  * Deletes `content` from `lst` with function `del`, and then free() the node.

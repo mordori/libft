@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 10:11:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/11 22:57:30 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:05:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_mem.h"
 
 /**
  * Erases `n` bytes of data in the memory area `s` by writing `/0`.

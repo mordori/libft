@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   libft_defs.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:37:26 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:16:17 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/07/02 15:26:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_list.h"
+#ifndef LIBFT_DEFS_H
+# define LIBFT_DEFS_H
 
-/**
- * Adds the node `new` at the end of the list.
- *
- * @param lst Address of pointer to the head node of the list.
- * @param new Pointer to the node to be added.
- */
-void	ft_lstadd_back(t_list **lst, t_list *new)
+# define BASE_10 "0123456789"
+# define BASE_16 "0123456789ABCDEF"
+# define ERROR -1
+# define FALSE 0
+# define TRUE 1
+# define VEC_SIZE 4
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 4
+# endif
+
+typedef struct s_list
 {
-	t_list	*temp;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
-	if (!lst)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = new;
-}
+#endif

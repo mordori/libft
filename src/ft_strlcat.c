@@ -6,11 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 19:10:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/02 22:47:45 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:45:15 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
 
 /**
  * Tries to append characters from string `src` to the end of string `dst`.
