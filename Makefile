@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/02 01:48:58 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/02 19:45:25 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,6 @@ all: $(DIR_OBJ) $(NAME)
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_LIB) $(DIR_OBJ) $(DIR_DEP)
-	@echo "$(GREEN) [+]$(COLOR) compiling libft.a"
 
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
@@ -59,13 +58,15 @@ $(DIR_OBJ)%.o: $(DIR_SRC)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS)
 
 clean:
-	@rm -rf $(DIR_OBJ) $(DIR_DEP)
-	@echo "$(RED) [-]$(COLOR) removed libft/$(DIR_OBJ)"
-	@echo "$(RED) [-]$(COLOR) removed libft/$(DIR_DEP)"
+	@if [ -d "$(DIR_OBJ)" ]; then rm -rf $(DIR_OBJ) $(DIR_DEP); \
+	echo "$(RED) [-]$(COLOR) removed libft/$(DIR_OBJ)"; \
+	echo "$(RED) [-]$(COLOR) removed libft/$(DIR_DEP)"; \
+	fi
 
 fclean: clean
-	@rm -rf $(NAME)
-	@echo "$(RED) [-]$(COLOR) removed libft.a"
+	@if [ -e "$(NAME)" ]; then rm -f $(NAME); \
+	echo "$(RED) [-]$(COLOR) removed libft.a"; \
+	fi
 
 re: fclean all
 
