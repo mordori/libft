@@ -11,6 +11,9 @@
 > ## 🚀 How to use
 > Working example can be seen in my [fdf](https://github.com/mordori/fdf) project where another Makefile clones and then compiles this library. 
 - Clone the repository at the root level of your project.
+``` git
+git clone https://github.com/mordori/libft.git libft && cd libft
+```
 - Run the following command to create `libft.a`.
 ``` Makefile
 make
@@ -27,7 +30,7 @@ make
 > ```
 - Compile your program together with `libft/libft.a` and `-I libft/include/` flag, e.g.
 ``` bash
-cc -Wall -Wextra -Werror [YOUR_PROGRAM].c libft/libft.a -I libft/include/
+cc -Wall -Wextra -Werror [YOUR_PROGRAM] libft/libft.a -I libft/include/
 ```
 - To delete all of the compiled files, use:
 ``` Makefile
