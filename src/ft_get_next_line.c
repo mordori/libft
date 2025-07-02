@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:14:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 17:48:02 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/03 02:19:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,12 @@ static inline char	*extract_line(const char *buf)
 static inline void	trimbuf(char *buf)
 {
 	size_t	len_nl;
+	size_t	len_buf;
 
 	len_nl = linelen(buf);
-	ft_memcpy(buf, buf + len_nl, BUFFER_SIZE);
-	buf[ft_strlen(buf) - len_nl] = '\0';
+	len_buf = ft_strlen(buf);
+	ft_memcpy(buf, buf + len_nl, len_buf);
+	buf[len_buf - len_nl] = '\0';
 }
 
 /**
