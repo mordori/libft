@@ -9,7 +9,7 @@
 
 > [!TIP]
 > ## 🚀 How to use
-> Working example can be seen in my [ft_printf](https://github.com/mordori/ft_printf) project where another Makefile compiles this library. 
+> Working example can be seen in my [fdf](https://github.com/mordori/fdf) project where another Makefile clones and then compiles this library. 
 - Clone the repository at the root level of your project.
 - Run the following command to create `libft.a`.
 ``` Makefile
