@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:22:09 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:16:49 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:44:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
  */
 int	ft_lstsize(t_list *lst)
 {
-	int		len;
+	int	len;
 
 	if (!lst)
-		return (0);
+		return (false);
 	len = 0;
 	while (lst)
 	{

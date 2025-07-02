@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:37:26 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:16:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:08:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,22 @@
  *
  * @param lst Address of pointer to the head node of the list.
  * @param new Pointer to the node to be added.
+ * @return True if successful, else false.
  */
-void	ft_lstadd_back(t_list **lst, t_list *new)
+bool	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
 	if (!lst)
-		return ;
+		return (false);
 	if (!*lst)
 	{
 		*lst = new;
-		return ;
+		return (true);
 	}
 	temp = *lst;
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
+	return (true);
 }

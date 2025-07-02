@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:14:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:00:20 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:48:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static inline size_t	linelen(const char *buf);
  * Returns a line read from file descriptor `fd`.
  *
  * @param fd File descriptor to read from.
- * @return String from the read line or NULL in case of error or if there
+ * @return String from the read line. NULL in case of error, or if there
  * is nothing else to read.
  */
 char	*get_next_line(int fd)
@@ -42,7 +42,7 @@ char	*get_next_line(int fd)
 	while (!ft_strchr(buf[fd], '\n'))
 	{
 		bytes = read(fd, buf[fd], BUFFER_SIZE);
-		if (bytes == -1)
+		if (bytes == ERROR)
 			return (free(line), NULL);
 		if (bytes == 0)
 			break ;

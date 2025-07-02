@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:11:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:45:13 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  *
  * @param nmemb Number of elements.
  * @param size Size of an element in bytes.
- * @return Pointer to the beginning of the allocated memory area, or `NULL`
+ * @return Pointer to the beginning of the allocated memory area, or NULL
  * if allocation failed.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -34,6 +34,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	return (ft_bzero(ptr, nmemb * size));
 }

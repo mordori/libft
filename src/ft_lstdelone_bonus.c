@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:07:14 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:05:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
  *
  * @param lst Pointer to a node.
  * @param del Pointer to function used to delete `content` of the node.
+ * @return True if successful, else false.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+bool	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
-		return ;
+		return (false);
 	del (lst->content);
 	free(lst);
+	return (true);
 }

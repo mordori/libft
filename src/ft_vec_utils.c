@@ -6,20 +6,27 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:10:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:13:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_vec.h"
 
-static int	vec_resize(t_vec *vec, size_t size)
+/**
+ * Creates a new items array and replaces the old one.
+ *
+ * @param vec Vector to be operated.
+ * @param size Capacity of the new items array to be allocated.
+ * @return True if successful, else false.
+ */
+static bool	vec_resize(t_vec *vec, size_t size)
 {
 	void	**items;
 	size_t	i;
 
 	items = malloc(sizeof (void *) * size);
 	if (!items)
-		return (FALSE);
+		return (false);
 	i = 0;
 	while (i < vec->total)
 	{
@@ -29,24 +36,44 @@ static int	vec_resize(t_vec *vec, size_t size)
 	free(vec->items);
 	vec->items = items;
 	vec->size = size;
-	return (TRUE);
+	return (true);
 }
 
-int	vec_add(t_vec *vec, void *item)
+/**
+ * Adds `new` to the items of `vec`.
+ *
+ * Resizes the items array if needed.
+ *
+ * @param vec Vector to be operated.
+ * @param new New item to be added.
+ * @return True if successful, else false.
+ */
+bool	vec_add(t_vec *vec, void *new)
 {
 	if (!vec)
-		return (FALSE);
+		return (false);
 	if (vec->total == vec->size)
 		if (!vec_resize(vec, vec->size * 2))
-			return (FALSE);
-	vec->items[vec->total++] = item;
-	return (TRUE);
+			return (false);
+	vec->items[vec->total++] = new;
+	return (true);
 }
 
-int	vec_del(t_vec *vec, size_t index)
+/**
+ * Removes an item with the `index` in `vec`.
+ *
+ * Resizes the items array if needed.
+ *
+ * Frees the item, if it belongs to heap.
+ *
+ * @param vec Vector to be operated.
+ * @param index Index of the item to be removed.
+ * @return True if successful, else false.
+ */
+bool	vec_del(t_vec *vec, size_t index)
 {
 	if (!vec || index >= vec->total)
-		return (FALSE);
+		return (false);
 	if (vec->is_heap)
 	{
 		free(vec->items[index]);
@@ -60,16 +87,24 @@ int	vec_del(t_vec *vec, size_t index)
 	vec->total--;
 	if (vec->size > VEC_SIZE && vec->total > 0 && vec->total == vec->size / 4)
 		if (!vec_resize(vec, vec->size / 2))
-			return (FALSE);
-	return (TRUE);
+			return (false);
+	return (true);
 }
 
-void	vec_free(t_vec *vec)
+/**
+ * Frees the items array and cleans ´vec´.
+ *
+ * Additionally frees all item elements, if they belong to heap.
+ *
+ * @param vec Vector to be operated.
+ * @return True if successful, else false.
+ */
+bool	vec_free(t_vec *vec)
 {
 	size_t	i;
 
 	if (!vec)
-		return ;
+		return (false);
 	i = 0;
 	if (vec->is_heap)
 	{
@@ -83,4 +118,5 @@ void	vec_free(t_vec *vec)
 	vec->total = 0;
 	vec->size = 0;
 	vec->items = NULL;
+	return (true);
 }

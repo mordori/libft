@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:21:49 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:07:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:54:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@
  */
 size_t	ft_countdigits(long long n, const size_t len)
 {
-	size_t	count;
+	size_t		count;
+	long long	base;
 
 	if (!len)
-		return (-1);
+		return (ERROR);
+	base = (long long)len;
 	count = 1;
-	n /= (long long)len;
+	n /= base;
 	while (n)
 	{
 		++count;
-		n /= (long long)len;
+		n /= base;
 	}
 	return (count);
 }
@@ -47,7 +49,7 @@ size_t	ft_ucountdigits(uintptr_t n, const size_t len)
 	size_t	count;
 
 	if (!len)
-		return (-1);
+		return (ERROR);
 	count = 1;
 	n /= len;
 	while (n)

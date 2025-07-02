@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:46:28 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:03:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:21:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 
 # include "libft_defs.h"
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
+bool	ft_isalpha(int c);
+bool	ft_isdigit(int c);
+bool	ft_isalnum(int c);
+bool	ft_isascii(int c);
+bool	ft_isprint(int c);
 int		ft_atoi(const char *nptr);
 int		ft_toupper(char *c);
 int		ft_tolower(char *c);
-int		ft_strchrdup(const char *base);
+bool	ft_strchrdup(const char *base);
 size_t	ft_countdigits(long long n, const size_t len);
 size_t	ft_ucountdigits(uintptr_t n, const size_t len);
 char	*ft_uitoa(uintptr_t n, const char *base);

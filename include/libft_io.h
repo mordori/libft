@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:33:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:02:00 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:40:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "libft_defs.h"
 
 char	*get_next_line(int fd);
-int		ft_printf(const char *str, ...);
+ssize_t	ft_printf(const char *str, ...);
 ssize_t	ft_putchar_fd(char c, int fd);
 ssize_t	ft_putendl_fd(char *s, int fd);
 ssize_t	ft_putstr_fd(char *s, int fd);

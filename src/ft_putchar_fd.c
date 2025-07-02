@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:45:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:30:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:37:50 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @param c Character to output.
  * @param fd File descriptor.
- * @return Number of characters written, -1 on error or only partial write.
+ * @return Number of characters written, -1 on error.
  */
 ssize_t	ft_putchar_fd(char c, int fd)
 {

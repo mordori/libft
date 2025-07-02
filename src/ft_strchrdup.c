@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:24:02 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:43:10 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:21:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
  * Checks if the string `str` has no duplicate characters.
  *
  * @param str Source string.
- * @return `1` if no duplicates are found, `0` otherwise.
+ * @return True if no duplicates are found, false otherwise.
  */
-int	ft_strchrdup(const char *str)
+bool	ft_strchrdup(const char *str)
 {
 	int	i;
 	int	j;
 
 	if (!str || !*str)
-		return (0);
+		return (false);
 	i = 0;
 	while (str[i])
 	{
@@ -32,10 +32,10 @@ int	ft_strchrdup(const char *str)
 		while (j < i)
 		{
 			if (str[j] == str[i])
-				return (0);
+				return (false);
 			++j;
 		}
 		++i;
 	}
-	return (1);
+	return (true);
 }

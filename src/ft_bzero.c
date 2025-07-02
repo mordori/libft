@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 10:11:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:05:02 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:43:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
  *
  * @param s Source memory area.
  * @param n Number of bytes to be NUL-terminated.
+ * @return Pointer to modified `s`.
  */
-void	ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	return (ft_memset(s, 0, n));
 }

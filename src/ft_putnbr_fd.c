@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 21:13:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 16:02:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:40:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
  *
  * @param n Integer to output.
  * @param fd File descriptor.
+ * @return True if successful, else ERROR.
  */
 int	ft_putnbr_fd(int n, int fd)
 {
@@ -27,7 +28,7 @@ int	ft_putnbr_fd(int n, int fd)
 	if (n == INT_MIN)
 	{
 		ft_putstr_fd("-2147483648", fd);
-		return (TRUE);
+		return (true);
 	}
 	if (n < 0)
 	{
@@ -41,5 +42,5 @@ int	ft_putnbr_fd(int n, int fd)
 	c = n % 10 + '0';
 	if (write (fd, &c, 1) == ERROR)
 		return (ERROR);
-	return (TRUE);
+	return (true);
 }
