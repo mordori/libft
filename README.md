@@ -1,9 +1,9 @@
 # libft
-> ## ✨ Features
-> Library of commonly used standard and additional utility functions from libc recreated in C.
-> - Some of the functions have been modified from the subject, e.g. to handle errors.
-> - Includes functions from subsequently completed projects and expanded utility implementations.
-> - Modularized into categories.
+## ✨ Features
+Library of commonly used standard and additional utility functions from libc recreated in C.
+- Some of the functions have been modified from the subject, e.g. to handle errors.
+- Includes functions from subsequently completed projects and expanded utility implementations.
+- Modularized into categories.
 
 > [!NOTE]
 > This project was developed and tested using clang on Ubuntu. It will likely work on other Linux distributions and with compatible C/C++ compilers.
