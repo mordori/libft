@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/03 01:33:36 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/09 13:24:29 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ MAKEFLAGS	+= --no-print-directory
 NAME		=libft.a
 
 CC			=cc
-CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -Wunused-result -O3 -MMD -MP
+CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3 -MMD -MP
 
 DIR_INC		=include/
 DIR_SRC		=src/

@@ -6,14 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 17:53:00 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:20:55 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_DEFS_H
 # define LIBFT_DEFS_H
 
-#include <stdbool.h>
+# include <stdbool.h>
 
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"

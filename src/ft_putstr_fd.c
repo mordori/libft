@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:59:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 18:39:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:24:49 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ssize_t	ft_putstr_fd(char *s, int fd)
 
 	if (!s)
 		return (ERROR);
+	totalbytes = 0;
 	len = ft_strlen(s);
 	while (len > 0)
 	{
