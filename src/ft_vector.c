@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/10 23:56:09 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 00:23:01 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ bool	vector_init(t_vec *vec, bool is_heap)
 {
 	if (!vec)
 		return (false);
-	vec->items = malloc(sizeof (void *) * VEC_SIZE);
+	vec->items = malloc(sizeof (void *) * VECTOR_SIZE);
 	if (!vec->items)
 		return (false);
-	vec->size = VEC_SIZE;
+	vec->size = VECTOR_SIZE;
 	vec->total = 0;
 	vec->is_heap = is_heap;
 	return (true);
