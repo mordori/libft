@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_utils.c                                     :+:      :+:    :+:   */
+/*   ft_vector_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 18:13:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/10 23:57:06 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_vec.h"
+#include "libft_vector.h"
 
 /**
  * Creates a new items array and replaces the old one.
@@ -19,7 +19,7 @@
  * @param size Capacity of the new items array to be allocated.
  * @return True if successful, else false.
  */
-static bool	vec_resize(t_vec *vec, size_t size)
+static bool	vector_resize(t_vec *vec, size_t size)
 {
 	void	**items;
 	size_t	i;
@@ -48,12 +48,12 @@ static bool	vec_resize(t_vec *vec, size_t size)
  * @param new New item to be added.
  * @return True if successful, else false.
  */
-bool	vec_add(t_vec *vec, void *new)
+bool	vector_add(t_vec *vec, void *new)
 {
 	if (!vec)
 		return (false);
 	if (vec->total == vec->size)
-		if (!vec_resize(vec, vec->size * 2))
+		if (!vector_resize(vec, vec->size * 2))
 			return (false);
 	vec->items[vec->total++] = new;
 	return (true);
@@ -70,7 +70,7 @@ bool	vec_add(t_vec *vec, void *new)
  * @param index Index of the item to be removed.
  * @return True if successful, else false.
  */
-bool	vec_del(t_vec *vec, size_t index)
+bool	vector_del(t_vec *vec, size_t index)
 {
 	if (!vec || index >= vec->total)
 		return (false);
@@ -86,7 +86,7 @@ bool	vec_del(t_vec *vec, size_t index)
 	}
 	vec->total--;
 	if (vec->size > VEC_SIZE && vec->total > 0 && vec->total == vec->size / 4)
-		if (!vec_resize(vec, vec->size / 2))
+		if (!vector_resize(vec, vec->size / 2))
 			return (false);
 	return (true);
 }
@@ -99,7 +99,7 @@ bool	vec_del(t_vec *vec, size_t index)
  * @param vec Vector to be operated.
  * @return True if successful, else false.
  */
-bool	vec_free(t_vec *vec)
+bool	vector_free(t_vec *vec)
 {
 	size_t	i;
 

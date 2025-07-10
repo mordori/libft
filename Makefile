@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/09 13:24:29 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/10 23:53:53 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,8 @@ SRCS		=$(addprefix $(DIR_SRC), \
 			ft_lstclear_bonus.c ft_lstdelone_bonus.c \
 			ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
 			ft_lstnew_bonus.c ft_lstsize_bonus.c ft_printf.c ft_uitoa.c \
-			ft_countdigits.c ft_strchrdup.c ft_get_next_line.c ft_vec.c \
-			ft_vec_utils.c ft_math.c)
+			ft_countdigits.c ft_strchrdup.c ft_get_next_line.c ft_vector.c \
+			ft_vector_utils.c ft_math.c)
 OBJS		=$(patsubst $(DIR_SRC)%.c, $(DIR_OBJ)%.o, $(SRCS))
 DEPS		=$(patsubst $(DIR_SRC)%.c, $(DIR_DEP)%.d, $(SRCS))
 

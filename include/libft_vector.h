@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_vec.h                                        :+:      :+:    :+:   */
+/*   libft_vector.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:30:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 18:17:06 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/10 23:55:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ typedef struct s_vec
 	bool	is_heap;
 }				t_vec;
 
-bool	vec_add(t_vec *vec, void *new);
-bool	vec_free(t_vec *vec);
-bool	vec_del(t_vec *vec, size_t index);
-void	*vec_get(t_vec *vec, size_t index);
-bool	vec_init(t_vec *vec, bool is_heap);
-bool	vec_set(t_vec *vec, size_t index, void *new);
-int		vec_size(t_vec *vec);
-int		vec_total(t_vec *vec);
+bool	vector_add(t_vec *vec, void *new);
+bool	vector_free(t_vec *vec);
+bool	vector_del(t_vec *vec, size_t index);
+void	*vector_get(t_vec *vec, size_t index);
+bool	vector_init(t_vec *vec, bool is_heap);
+bool	vector_set(t_vec *vec, size_t index, void *new);
+int		vector_size(t_vec *vec);
+int		vector_total(t_vec *vec);
 
 #endif
