@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:23:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 00:49:50 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param is_heap Flag, if the items are to be allocated in heap.
  * @return True if successful, else false.
  */
-bool	vector_init(t_vec *vec, bool is_heap)
+bool	vector_init(t_vector *vec, bool is_heap)
 {
 	if (!vec)
 		return (false);
@@ -42,7 +42,7 @@ bool	vector_init(t_vec *vec, bool is_heap)
  * @param new New item that will replace the old one.
  * @return True if successful, else false.
  */
-bool	vector_set(t_vec *vec, size_t index, void *new)
+bool	vector_set(t_vector *vec, size_t index, void *new)
 {
 	if (!vec || !new)
 		return (false);
@@ -62,7 +62,7 @@ bool	vector_set(t_vec *vec, size_t index, void *new)
  * @param index Index of the item.
  * @return Item if successful, else NULL.
  */
-void	*vector_get(t_vec *vec, size_t index)
+void	*vector_get(t_vector *vec, size_t index)
 {
 	if (!vec)
 		return (NULL);
@@ -77,7 +77,7 @@ void	*vector_get(t_vec *vec, size_t index)
  * @param vec Vector to be operated.
  * @return Amount of items added in the vector.
  */
-int	vector_total(t_vec	*vec)
+int	vector_total(t_vector	*vec)
 {
 	if (!vec)
 		return (false);
@@ -90,7 +90,7 @@ int	vector_total(t_vec	*vec)
  * @param vec Vector to be operated.
  * @return Capacity of items array in the vector.
  */
-int	vector_size(t_vec *vec)
+int	vector_size(t_vector *vec)
 {
 	if (!vec)
 		return (false);

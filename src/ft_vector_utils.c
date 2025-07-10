@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:19:54 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 00:49:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param size Capacity of the new items array to be allocated.
  * @return True if successful, else false.
  */
-static bool	vector_resize(t_vec *vec, size_t size)
+static bool	vector_resize(t_vector *vec, size_t size)
 {
 	void	**items;
 	size_t	i;
@@ -48,7 +48,7 @@ static bool	vector_resize(t_vec *vec, size_t size)
  * @param new New item to be added.
  * @return True if successful, else false.
  */
-bool	vector_add(t_vec *vec, void *new)
+bool	vector_add(t_vector *vec, void *new)
 {
 	if (!vec)
 		return (false);
@@ -70,7 +70,7 @@ bool	vector_add(t_vec *vec, void *new)
  * @param index Index of the item to be removed.
  * @return True if successful, else false.
  */
-bool	vector_del(t_vec *vec, size_t index)
+bool	vector_del(t_vector *vec, size_t index)
 {
 	if (!vec || index >= vec->total)
 		return (false);
@@ -99,7 +99,7 @@ bool	vector_del(t_vec *vec, size_t index)
  * @param vec Vector to be operated.
  * @return True if successful, else false.
  */
-bool	vector_free(t_vec *vec)
+bool	vector_free(t_vector *vec)
 {
 	size_t	i;
 
