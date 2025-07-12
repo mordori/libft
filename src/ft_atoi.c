@@ -6,41 +6,69 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 17:56:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/12 04:05:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_utils.h"
+#include "libft_str.h"
 
 static inline bool	ft_isspace(char c);
 
 /**
- * Converts the initial portion of the string `nptr` to an integer value.
+ * Converts the initial portion of the string `str` to an integer value.
  *
  * Does not handle overflow.
  *
  * In case of NULL `nptr` returns arbitrary -1.
  *
- * @param nptr Source string.
+ * @param str Source string.
  * @return Integer value converted from the initial portion of the provided
- * string `nptr`.
+ * string `str`.
  */
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	number;
 
-	if (!nptr)
+	if (!str)
 		return (ERROR);
-	while (ft_isspace(*nptr))
-		++nptr;
+	while (ft_isspace(*str))
+		++str;
 	sign = 1;
-	if ((*nptr == '-' || *nptr == '+') && *nptr++ == '-')
+	if ((*str == '-' || *str == '+') && *str++ == '-')
 		sign = -1;
 	number = 0;
-	while (ft_isdigit(*nptr))
-		number = number * 10 + (*nptr++ - '0');
+	while (ft_isdigit(*str))
+		number = number * 10 + (*str++ - '0');
 	return (sign * number);
+}
+
+int	ft_atoi_base(const char *str, const char *base)
+{
+	int		sign;
+	int		result;
+	size_t	len_base;
+	char	*ptr;
+
+	if (!str || !ft_strchrdup(base))
+		return (ERROR);
+	while (ft_isspace(*str))
+		++str;
+	sign = 1;
+	len_base = ft_strlen(base);
+	if ((*str == '-' || *str == '+') && *str++ == '-')
+		sign = -1;
+	result = 0;
+	while (*str)
+	{
+		ptr = ft_strchr(base, *str);
+		if (!ptr)
+			break;
+		result = result * len_base + (ptr - base);
+		++str;
+	}
+	return (sign * result);
 }
 
 /**

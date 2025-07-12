@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:30:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:49:23 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 04:05:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ bool	vector_init(t_vector *vec, bool is_heap);
 bool	vector_set(t_vector *vec, size_t index, void *new);
 int		vector_size(t_vector *vec);
 int		vector_total(t_vector *vec);
+void	*vector_getlast(t_vector *vec);
 
 #endif

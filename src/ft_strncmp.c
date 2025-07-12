@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:34:04 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:46:13 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 03:33:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (!s1 || !s2 || !n)
 		return (0);
-	while (*s1 == *s2 && *s1 && *s2 && --n)
+	while (*s1 && *s2 && *s1 == *s2 && --n)
 	{
 		++s1;
 		++s2;

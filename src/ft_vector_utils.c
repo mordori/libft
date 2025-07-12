@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:49:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/11 04:06:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,17 @@ bool	vector_free(t_vector *vec)
 	vec->size = 0;
 	vec->items = NULL;
 	return (true);
+}
+
+/**
+ * Returns the last item in `vec`.
+ *
+ * @param vec Vector to be operated.
+ * @return Item if successful, else NULL.
+ */
+void	*vector_getlast(t_vector *vec)
+{
+	if (!vec)
+		return (NULL);
+	return (vec->items[vec->total - 1]);
 }

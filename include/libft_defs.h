@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:18:15 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:57:27 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # endif
 
 # ifndef FD_MAX
-#  define FD_MAX 4
+#  define FD_MAX 50
 # endif
 
 typedef struct s_list
