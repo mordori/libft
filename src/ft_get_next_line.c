@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:14:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/12 02:04:30 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/16 12:42:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static inline size_t	linelen(const char *buf);
  * @return String from the read line. NULL in case of error, or if there
  * is nothing else to read.
  */
-char	*get_next_line(int fd)
+char	*get_next_line_fd(int fd)
 {
 	static char	buf[FD_MAX][BUFFER_SIZE + 1];
 	char		*line;
@@ -52,6 +52,33 @@ char	*get_next_line(int fd)
 			return (NULL);
 	}
 	trimbuf(buf[fd]);
+	return (line);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	buf[BUFFER_SIZE + 1];
+	char		*line;
+	ssize_t		bytes;
+
+	if (fd < 0 || BUFFER_SIZE < 1)
+		return (NULL);
+	line = extract_line(buf);
+	if (buf[0] && !line)
+		return (NULL);
+	while (!ft_strchr(buf, '\n'))
+	{
+		bytes = read(fd, buf, BUFFER_SIZE);
+		if (bytes == ERROR)
+			return (free(line), NULL);
+		if (bytes == 0)
+			break ;
+		buf[bytes] = '\0';
+		line = join_lines(line, buf);
+		if (!line)
+			return (NULL);
+	}
+	trimbuf(buf);
 	return (line);
 }
 

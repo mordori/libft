@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:14:46 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/08 17:50:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:20:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,18 @@ float	fast_sqrt(float n)
 	x = x * (1.5f - xhalf * x * x);
 	x = x * (1.5f - xhalf * x * x);
 	return (n * x);
+}
+
+float	ft_fmax(float a, float b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+float	ft_fmin(float a, float b)
+{
+	if (a < b)
+		return (a);
+	return (b);
 }

@@ -6,14 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:30:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 04:05:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:52:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_VEC_H
 # define LIBFT_VEC_H
 
-# include <stddef.h>
 # include <stdlib.h>
 
 # include "libft_defs.h"

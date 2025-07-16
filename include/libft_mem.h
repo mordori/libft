@@ -6,14 +6,12 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:42:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 17:44:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:51:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_MEM_H
 # define LIBFT_MEM_H
-
-# include <stddef.h>
 
 # include "libft_defs.h"
 
