@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/02 15:41:45 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/17 13:16:34 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 static inline size_t	ft_count_words(char const *s, char c);
 static inline size_t	ft_word_len(char const **s, char c);
-static inline void	ft_free_strs(char **strs);
 
 /**
  * Allocates memory and returns an array of strings by splitting string `s`
@@ -48,7 +47,7 @@ char	**ft_split(char const *s, char c)
 		strs[i] = ft_substr(s - word_len, 0, word_len);
 		if (!strs[i++])
 		{
-			ft_free_strs(strs);
+			ft_free_split(strs);
 			return (NULL);
 		}
 	}
@@ -112,7 +111,7 @@ static inline size_t	ft_word_len(char const **s, char c)
  * @param s Array of strings.
  * @return NULL.
  */
-static inline void	ft_free_strs(char **strs)
+void	ft_free_split(char **strs)
 {
 	int	i;
 

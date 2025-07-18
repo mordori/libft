@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/16 22:55:11 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/18 03:50:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,8 @@ t_mat4	mat4_identity(void)
 {
 	t_mat4	matrix;
 	size_t	i;
-	size_t	j;
 
-	i = 0;
-	while (i < 4)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			matrix.m[i][j] = 0.0f;
-			++j;
-		}
-		++i;
-	}
+	matrix = mat4_zero();
 	i = 0;
 	while (i < 4)
 	{
@@ -45,7 +34,7 @@ t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 	int		col;
 	int		k;
 
-	result = mat4_identity();
+	result = mat4_zero();
 	row = 0;
 	while(row < 4)
 	{
@@ -65,12 +54,43 @@ t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 	return (result);
 }
 
-t_vec3	mat4_transform_vec3(t_mat4 m, t_vec3 v)
+t_vec4	mat4_mul_vec4(t_mat4 m, t_vec4 v)
 {
-	t_vec3	result;
+	t_vec4	result;
 
-	result.x = v.x * m.m[0][0] + v.y * m.m[0][1] + v.z * m.m[0][2] + m.m[0][3];
-	result.y = v.x * m.m[1][0] + v.y * m.m[1][1] + v.z * m.m[1][2] + m.m[1][3];
-	result.z = v.x * m.m[2][0] + v.y * m.m[2][1] + v.z * m.m[2][2] + m.m[2][3];
+	result.x = v.x*m.m[0][0] + v.y*m.m[0][1] + v.z*m.m[0][2] + v.w*m.m[0][3];
+	result.y = v.x*m.m[1][0] + v.y*m.m[1][1] + v.z*m.m[1][2] + v.w*m.m[1][3];
+	result.z = v.x*m.m[2][0] + v.y*m.m[2][1] + v.z*m.m[2][2] + v.w*m.m[2][3];
+	result.w = v.x*m.m[3][0] + v.y*m.m[3][1] + v.z*m.m[3][2] + v.w*m.m[3][3];
 	return (result);
+}
+
+t_vec3	mat4_apply_model(t_mat4 model, t_vec3 v)
+{
+	t_vec4	vec;
+
+	vec.x = v.x;
+	vec.y = v.y;
+	vec.z = v.z;
+	vec.w = 1.0f;
+	vec = mat4_mul_vec4(model, vec);
+	v.x = vec.x;
+	v.y = vec.y;
+	v.z = vec.z;
+	return (v);
+}
+
+t_mat4	mat4_zero()
+{
+	t_mat4	matrix;
+	size_t	i;
+
+	i = 0;
+	while (i < 16)
+	{
+		matrix.m[i / 4][i % 4] = 0.0f;
+		++i;
+	}
+
+	return (matrix);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/16 23:22:27 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/18 06:36:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 # define ERROR -1
 # define WHITE 0xFFFFFFFF
 # define BLACK 0x000000FF
+# define BLUE 0x0000FFFF
+# define GREEN 0x00FF00FF
+# define BROWN 0x7C4700FF
+# define ERROR_COLOR 0xFF00FFFF
 
 # ifndef VECTOR_SIZE
 #  define VECTOR_SIZE 4
@@ -53,10 +57,18 @@ typedef struct	s_vec2
 
 typedef struct	s_vec3
 {
-	int	x;
-	int	y;
-	int	z;
+	float	x;
+	float	y;
+	float	z;
 }				t_vec3;
+
+typedef struct	s_vec4
+{
+	float	x;
+	float	y;
+	float	z;
+	float	w;
+}				t_vec4;
 
 typedef struct	s_mat4
 {
@@ -73,16 +85,24 @@ typedef struct	s_color
 
 typedef struct	s_quad
 {
-	int	topLeft;
-	int topRight;
-	int	bottomLeft;
-	int	bottomRight;
+	float	topLeft;
+	float	topRight;
+	float	bottomLeft;
+	float	bottomRight;
 }				t_quad;
 
 typedef struct	s_vertex
 {
-	t_vec3		pos;
+	t_vec4		pos;
+	t_vec2		screen;
 	uint32_t	color;
 }				t_vertex;
+
+typedef struct	s_transform
+{
+	t_vec3	pos;
+	t_vec3	rot;
+	t_vec3	scale;
+}				t_transform;
 
 #endif

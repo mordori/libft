@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/16 01:37:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/17 13:24:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ bool	vector_free(t_vector *vec)
 	if (!vec)
 		return (false);
 	i = 0;
-	if (vec->is_heap)
+	if (vec->is_heap && vec->items)
 	{
 		while (i < vec->total)
 		{
