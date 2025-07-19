@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 06:36:43 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/18 15:22:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_DEFS_H
 
 # include <stdbool.h>
+# include <float.h>
 # include <stddef.h>
 # include <stdint.h>
 

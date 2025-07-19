@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 03:50:43 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:49:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 	t_mat4	result;
 	int		row;
 	int		col;
-	int		k;
+	int		i;
 
 	result = mat4_zero();
 	row = 0;
@@ -41,11 +41,11 @@ t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 		col = 0;
 		while (col < 4)
 		{
-			k = 0;
-			while (k < 4)
+			i = 0;
+			while (i < 4)
 			{
-				result.m[row][col] += a.m[row][k] * b.m[k][col];
-				++k;
+				result.m[row][col] += a.m[row][i] * b.m[i][col];
+				++i;
 			}
 			++col;
 		}

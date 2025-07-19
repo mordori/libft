@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:48 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 03:50:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/19 05:05:30 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ t_mat4	mat4_rot_y(float angle);
 t_mat4	mat4_rot_z(float angle);
 t_vec3	mat4_apply_model(t_mat4 model, t_vec3 v);
 t_mat4	mat4_zero();
+t_mat4	mat4_rot(t_vec3 rot);
 
 #endif
