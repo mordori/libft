@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 21:12:47 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/19 21:14:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 18:51:33 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 float	wrapf(float a)
 {
-	if (a > M_PI * 2.0f)
-		return (a - M_PI * 2.0f);
-	else if (a < -M_PI * 2.0f)
-		return (a + M_PI * 2.0f);
+	const float	limit = M_PI * 2.0f;
+
+	if (a > limit)
+		return (a - limit);
+	else if (a < -limit)
+		return (a + limit);
 	return (a);
 }

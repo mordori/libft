@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 18:49:57 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 16:05:45 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_vec4	mat4_mul_vec4(t_mat4 m, t_vec4 v)
 	return (result);
 }
 
-t_vec3	mat4_apply_model(t_mat4 model, t_vec3 v)
+t_vec3	mat4_mul_vec3(t_mat4 model, t_vec3 v)
 {
 	t_vec4	vec;
 
