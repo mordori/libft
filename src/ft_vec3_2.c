@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:28:02 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 17:06:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:02:31 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,14 @@ t_vec3	vec3_normalize(t_vec3 v)
 	v.y /= len;
 	v.z /= len;
 	return (v);
+}
+
+t_vec3	vec3_4(t_vec4 v)
+{
+	t_vec3	result;
+
+	result.x = v.x;
+	result.y = v.y;
+	result.z = v.z;
+	return (result);
 }

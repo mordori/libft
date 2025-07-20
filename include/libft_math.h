@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/20 19:26:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:02:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_vec3	vec3_scale(t_vec3 v, float s);
 t_vec3	vec3_cross(t_vec3 a, t_vec3 b);
 float	vec3_dot(t_vec3 a, t_vec3 b);
 t_vec3	vec3_normalize(t_vec3 v);
+t_vec3	vec3_4(t_vec4 v);
 t_vec4	vec4(float x, float y, float z, float w);
 t_vec4	vec4_3(t_vec3 v);
 t_vec4	vec4_n(float n);

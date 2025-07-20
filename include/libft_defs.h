@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/20 01:33:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:21:36 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
+# endif
+
+# ifndef M_PI_2
+# define M_PI_2 1.57079632679489661923
 # endif
 
 typedef struct s_list
@@ -104,6 +108,7 @@ typedef struct	s_vertex
 	t_vec4		pos;
 	t_vec2i		screen;
 	uint32_t	color;
+	float		z;
 }				t_vertex;
 
 typedef struct	s_transform
