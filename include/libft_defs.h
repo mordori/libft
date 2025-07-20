@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 15:22:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/20 01:33:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <float.h>
 # include <stddef.h>
 # include <stdint.h>
+# include <limits.h>
 
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"
@@ -50,10 +51,16 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_vec2
+typedef struct	s_vec2i
 {
 	int	x;
 	int	y;
+}				t_vec2i;
+
+typedef struct	s_vec2
+{
+	float	x;
+	float	y;
 }				t_vec2;
 
 typedef struct	s_vec3
@@ -95,7 +102,7 @@ typedef struct	s_quad
 typedef struct	s_vertex
 {
 	t_vec4		pos;
-	t_vec2		screen;
+	t_vec2i		screen;
 	uint32_t	color;
 }				t_vertex;
 

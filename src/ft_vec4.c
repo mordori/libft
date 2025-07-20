@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 14:46:02 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 16:02:13 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/19 23:34:27 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_vec4	vec4(float x, float y, float z, float w)
 	return (result);
 }
 
-t_vec4	vec4_f(float n)
+t_vec4	vec4_n(float n)
 {
 	t_vec4	result;
 
