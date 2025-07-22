@@ -6,12 +6,17 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/20 16:05:45 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/22 01:27:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_matrix.h"
 
+/**
+ * Identity 4x4 matrix with 1 on the main diagonal and 0 elsewhere.
+ *
+ * @return Identity 4x4 matrix.
+ */
 t_mat4	mat4_identity(void)
 {
 	t_mat4	matrix;
@@ -27,33 +32,51 @@ t_mat4	mat4_identity(void)
 	return (matrix);
 }
 
+/**
+ * Multiplies two 4x4 matrices. The result is constructed by multiplying all
+ * elements of the row of `a` with the corresponding elements of the
+ * column of matrix `b` and then adding these products.
+ *
+ * @param a 4x4 matrix.
+ * @param b 4x4 matrix.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 {
 	t_mat4	result;
-	int		row;
-	int		col;
 	int		i;
+	int		j;
+	int		k;
 
 	result = mat4_zero();
-	row = 0;
-	while(row < 4)
+	i = 0;
+	while(i < 4)
 	{
-		col = 0;
-		while (col < 4)
+		j = 0;
+		while (j < 4)
 		{
-			i = 0;
-			while (i < 4)
+			k = 0;
+			while (k < 4)
 			{
-				result.m[row][col] += a.m[row][i] * b.m[i][col];
-				++i;
+				result.m[i][j] += a.m[i][k] * b.m[k][j];
+				++k;
 			}
-			++col;
+			++j;
 		}
-		++row;
+		++i;
 	}
 	return (result);
 }
 
+/**
+ * Multiplies a 4x4 matrix with a vec4. The vector is 1D array that has the
+ * same amount of columns as the matrix has rows, so the concept is the
+ * same as multiplying two matrices.
+ *
+ * @param m 4x4 matrix.
+ * @param v Vec4.
+ * @return Result of the matrix applied to a vec4.
+ */
 t_vec4	mat4_mul_vec4(t_mat4 m, t_vec4 v)
 {
 	t_vec4	result;
@@ -65,6 +88,13 @@ t_vec4	mat4_mul_vec4(t_mat4 m, t_vec4 v)
 	return (result);
 }
 
+/**
+ * Multiplies a 4x4 matrix with a temporary vec4. Discards the last element.
+ *
+ * @param m 4x4 matrix.
+ * @param v Vec3.
+ * @return Result of the matrix applied to a vec3.
+ */
 t_vec3	mat4_mul_vec3(t_mat4 model, t_vec3 v)
 {
 	t_vec4	vec;
@@ -72,7 +102,7 @@ t_vec3	mat4_mul_vec3(t_mat4 model, t_vec3 v)
 	vec.x = v.x;
 	vec.y = v.y;
 	vec.z = v.z;
-	vec.w = 1.0f;
+	vec.w = 0.0f;
 	vec = mat4_mul_vec4(model, vec);
 	v.x = vec.x;
 	v.y = vec.y;
@@ -80,6 +110,11 @@ t_vec3	mat4_mul_vec3(t_mat4 model, t_vec3 v)
 	return (v);
 }
 
+/**
+ * Zero 4x4 matrix with 0 everywhere.
+ *
+ * @return Zero 4x4 matrix.
+ */
 t_mat4	mat4_zero()
 {
 	t_mat4	matrix;

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/20 22:02:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/21 23:32:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	ft_imin(int a, int b);
 float	ft_normalize(float value, float min, float max);
 float	clamp01(float value);
 float	wrapf(float a);
-t_vec2i	vec2i(float x, float y);
+t_vec2i	vec2i(int x, int y);
+t_vec2i	vec2i_f(float x, float y);
 t_vec2i	vec2i_n(float n);
 t_vec2i	vec2i_add(t_vec2i a, t_vec2i b);
 t_vec2i	vec2i_sub(t_vec2i a, t_vec2i b);
@@ -41,10 +42,11 @@ t_vec3	vec3_sub(t_vec3 a, t_vec3 b);
 t_vec3	vec3_scale(t_vec3 v, float s);
 t_vec3	vec3_cross(t_vec3 a, t_vec3 b);
 float	vec3_dot(t_vec3 a, t_vec3 b);
+float	vec3_length(t_vec3 v);
 t_vec3	vec3_normalize(t_vec3 v);
 t_vec3	vec3_4(t_vec4 v);
 t_vec4	vec4(float x, float y, float z, float w);
-t_vec4	vec4_3(t_vec3 v);
+t_vec4	vec4_3(t_vec3 v, float w);
 t_vec4	vec4_n(float n);
 t_vec4	vec4_add(t_vec4 a, t_vec4 b);
 t_vec4	vec4_sub(t_vec4 a, t_vec4 b);

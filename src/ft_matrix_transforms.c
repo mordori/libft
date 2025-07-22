@@ -6,13 +6,22 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:54:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/18 02:41:55 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:46:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft_matrix.h"
 
+/**
+ * Multiplies two 4x4 matrices. The result is constructed by multiplying all
+ * elements of the row of `a` with the corresponding elements of the
+ * column of matrix `b` and then adding these products.
+ *
+ * @param a 4x4 matrix.
+ * @param b 4x4 matrix.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_translate(t_vec3 t)
 {
 	t_mat4	matrix;
@@ -24,6 +33,15 @@ t_mat4	mat4_translate(t_vec3 t)
 	return (matrix);
 }
 
+/**
+ * Multiplies two 4x4 matrices. The result is constructed by multiplying all
+ * elements of the row of `a` with the corresponding elements of the
+ * column of matrix `b` and then adding these products.
+ *
+ * @param a 4x4 matrix.
+ * @param b 4x4 matrix.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_scale(t_vec3 s)
 {
 	t_mat4	matrix;
@@ -35,6 +53,15 @@ t_mat4	mat4_scale(t_vec3 s)
 	return (matrix);
 }
 
+/**
+ * Multiplies two 4x4 matrices. The result is constructed by multiplying all
+ * elements of the row of `a` with the corresponding elements of the
+ * column of matrix `b` and then adding these products.
+ *
+ * @param a 4x4 matrix.
+ * @param b 4x4 matrix.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_rot_x(float angle_rad)
 {
 	t_mat4	matrix;
