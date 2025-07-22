@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/17 13:24:56 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:59:32 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ bool	vector_del(t_vector *vec, size_t index)
 		++index;
 	}
 	vec->total--;
-	if (vec->size > VECTOR_SIZE && vec->total > 0 && vec->total == vec->size / 4)
+	if (vec->size > VECTOR_SIZE && vec->total > 0 && \
+vec->total == vec->size / 4)
 		if (!vector_resize(vec, vec->size / 2))
 			return (false);
 	return (true);

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:44:24 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/22 01:27:57 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:52:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_mat4	mat4_mul(t_mat4 a, t_mat4 b)
 
 	result = mat4_zero();
 	i = 0;
-	while(i < 4)
+	while (i < 4)
 	{
 		j = 0;
 		while (j < 4)
@@ -81,10 +81,14 @@ t_vec4	mat4_mul_vec4(t_mat4 m, t_vec4 v)
 {
 	t_vec4	result;
 
-	result.x = v.x*m.m[0][0] + v.y*m.m[0][1] + v.z*m.m[0][2] + v.w*m.m[0][3];
-	result.y = v.x*m.m[1][0] + v.y*m.m[1][1] + v.z*m.m[1][2] + v.w*m.m[1][3];
-	result.z = v.x*m.m[2][0] + v.y*m.m[2][1] + v.z*m.m[2][2] + v.w*m.m[2][3];
-	result.w = v.x*m.m[3][0] + v.y*m.m[3][1] + v.z*m.m[3][2] + v.w*m.m[3][3];
+	result.x = v.x * m.m[0][0] + v.y * m.m[0][1];
+	result.x += v.z * m.m[0][2] + v.w * m.m[0][3];
+	result.y = v.x * m.m[1][0] + v.y * m.m[1][1];
+	result.y += v.z * m.m[1][2] + v.w * m.m[1][3];
+	result.z = v.x * m.m[2][0] + v.y * m.m[2][1];
+	result.z += v.z * m.m[2][2] + v.w * m.m[2][3];
+	result.w = v.x * m.m[3][0] + v.y * m.m[3][1];
+	result.w += v.z * m.m[3][2] + v.w * m.m[3][3];
 	return (result);
 }
 
@@ -115,7 +119,7 @@ t_vec3	mat4_mul_vec3(t_mat4 model, t_vec3 v)
  *
  * @return Zero 4x4 matrix.
  */
-t_mat4	mat4_zero()
+t_mat4	mat4_zero(void)
 {
 	t_mat4	matrix;
 	size_t	i;
@@ -126,6 +130,5 @@ t_mat4	mat4_zero()
 		matrix.m[i / 4][i % 4] = 0.0f;
 		++i;
 	}
-
 	return (matrix);
 }

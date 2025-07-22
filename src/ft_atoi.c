@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/17 20:09:33 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:44:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_atoi_base(const char *str, const char *base)
 	{
 		ptr = ft_strchr(base, *str);
 		if (!ptr)
-			break;
+			break ;
 		result = result * len_base + (ptr - base);
 		++str;
 	}
