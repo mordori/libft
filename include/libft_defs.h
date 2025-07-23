@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/21 23:39:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/23 03:23:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 # define ERROR -1
 # define WHITE 0xFFFFFFFF
 # define BLACK 0x000000FF
-# define BLUE 0x0000FFFF
+# define RED 0xFF0000FF
 # define GREEN 0x00FF00FF
-# define BROWN 0x7C4700FF
+# define BLUE 0x0000FFFF
 # define ERROR_COLOR 0xFF00FFFF
 
 # ifndef VECTOR_SIZE
@@ -106,7 +106,7 @@ typedef struct	s_quad
 typedef struct	s_vertex
 {
 	t_vec4		pos;
-	t_vec2i		screen;
+	t_vec2i		s;
 	uint32_t	color;
 	float		z;
 }				t_vertex;
