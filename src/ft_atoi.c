@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/22 16:44:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:50:08 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_atoi_base(const char *str, const char *base)
 	return (sign * result);
 }
 
-uint32_t	ft_atoui_base(const char *str, const char *base)
+uint32_t	ft_atouint32_t_base(const char *str, const char *base)
 {
 	uint32_t	result;
 	size_t		len_base;
