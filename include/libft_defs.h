@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 03:23:20 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/23 19:57:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,26 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_vec2i
+typedef struct s_vec2i
 {
 	int	x;
 	int	y;
 }				t_vec2i;
 
-typedef struct	s_vec2
+typedef struct s_vec2
 {
 	float	x;
 	float	y;
 }				t_vec2;
 
-typedef struct	s_vec3
+typedef struct s_vec3
 {
 	float	x;
 	float	y;
 	float	z;
 }				t_vec3;
 
-typedef struct	s_vec4
+typedef struct s_vec4
 {
 	float	x;
 	float	y;
@@ -82,12 +82,12 @@ typedef struct	s_vec4
 	float	w;
 }				t_vec4;
 
-typedef struct	s_mat4
+typedef struct s_mat4
 {
 	float	m[4][4];
 }				t_mat4;
 
-typedef struct	s_color
+typedef struct s_color
 {
 	uint8_t	r;
 	uint8_t	g;
@@ -95,15 +95,15 @@ typedef struct	s_color
 	uint8_t	a;
 }				t_color;
 
-typedef struct	s_quad
+typedef struct s_quad
 {
-	float	topLeft;
-	float	topRight;
-	float	bottomLeft;
-	float	bottomRight;
+	float	topleft;
+	float	topright;
+	float	bottomleft;
+	float	bottomright;
 }				t_quad;
 
-typedef struct	s_vertex
+typedef struct s_vertex
 {
 	t_vec4		pos;
 	t_vec2i		s;
@@ -111,7 +111,7 @@ typedef struct	s_vertex
 	float		z;
 }				t_vertex;
 
-typedef struct	s_transform
+typedef struct s_transform
 {
 	t_vec3	pos;
 	t_vec3	rot;

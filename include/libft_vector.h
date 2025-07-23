@@ -6,12 +6,12 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:30:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/16 22:52:10 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/23 19:59:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_VEC_H
-# define LIBFT_VEC_H
+#ifndef LIBFT_VECTOR_H
+# define LIBFT_VECTOR_H
 
 # include <stdlib.h>
 
