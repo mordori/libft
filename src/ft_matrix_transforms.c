@@ -6,19 +6,21 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:54:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/22 16:52:32 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/25 00:30:55 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_matrix.h"
 
 /**
- * Multiplies two 4x4 matrices. The result is constructed by multiplying all
- * elements of the row of `a` with the corresponding elements of the
- * column of matrix `b` and then adding these products.
+ * Creates a translation matrix that translates by vector t (x, y, z).
  *
- * @param a 4x4 matrix.
- * @param b 4x4 matrix.
+ * [ 1	0	0	tx ]
+ * [ 0	1	0	ty ]
+ * [ 0	0	1	tz ]
+ * [ 0	0	0	1  ]
+ *
+ * @param s Vec3 position vector.
  * @return 4x4 matrix product.
  */
 t_mat4	mat4_translate(t_vec3 t)
@@ -33,12 +35,14 @@ t_mat4	mat4_translate(t_vec3 t)
 }
 
 /**
- * Multiplies two 4x4 matrices. The result is constructed by multiplying all
- * elements of the row of `a` with the corresponding elements of the
- * column of matrix `b` and then adding these products.
+ * Creates a scaling matrix that scales by vector s (x, y, z).
  *
- * @param a 4x4 matrix.
- * @param b 4x4 matrix.
+ * [ 1	0	0	tx ]
+ * [ 0	1	0	ty ]
+ * [ 0	0	1	tz ]
+ * [ 0	0	0	1  ]
+ *
+ * @param s Vec3 factor vector.
  * @return 4x4 matrix product.
  */
 t_mat4	mat4_scale(t_vec3 s)
@@ -53,12 +57,14 @@ t_mat4	mat4_scale(t_vec3 s)
 }
 
 /**
- * Multiplies two 4x4 matrices. The result is constructed by multiplying all
- * elements of the row of `a` with the corresponding elements of the
- * column of matrix `b` and then adding these products.
+ * Creates a rotation matrix that rotates around the X-axis by angle_rad.
  *
- * @param a 4x4 matrix.
- * @param b 4x4 matrix.
+ * [ 1		0		0		0 ]
+ * [ 0		cos		-sin	0 ]
+ * [ 0		sin		cos		0 ]
+ * [ 0		0		0		1 ]
+ *
+ * @param angle_rad Angle in radians.
  * @return 4x4 matrix product.
  */
 t_mat4	mat4_rot_x(float angle_rad)
@@ -77,6 +83,17 @@ t_mat4	mat4_rot_x(float angle_rad)
 	return (matrix);
 }
 
+/**
+ * Creates a rotation matrix that rotates around the Y-axis by angle_rad.
+ *
+ * [ cos	0		sin		0 ]
+ * [ 0		1		0		0 ]
+ * [ -sin	0		cos		0 ]
+ * [ 0		0		0		1 ]
+ *
+ * @param angle_rad Angle in radians.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_rot_y(float angle_rad)
 {
 	t_mat4	matrix;
@@ -93,6 +110,17 @@ t_mat4	mat4_rot_y(float angle_rad)
 	return (matrix);
 }
 
+/**
+ * Creates a rotation matrix that rotates around the Z-axis by angle_rad.
+ *
+ * [ cos	-sin	0		0 ]
+ * [ sin	cos		0		0 ]
+ * [ 0		0		1		0 ]
+ * [ 0		0		0		1 ]
+ *
+ * @param angle_rad Angle in radians.
+ * @return 4x4 matrix product.
+ */
 t_mat4	mat4_rot_z(float angle_rad)
 {
 	t_mat4	matrix;
