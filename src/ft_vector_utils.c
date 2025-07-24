@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/24 21:55:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/24 22:08:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static inline bool	vector_resize(t_vector *vec, size_t size)
  */
 bool	vector_add(t_vector *vec, void *new)
 {
-	if (!vec || !vec->total)
+	if (!vec || !vec->size)
 		return (false);
 	if (vec->total == vec->size)
 		if (!vector_resize(vec, vec->size * 2))
@@ -106,7 +106,7 @@ bool	vector_free(t_vector *vec)
 {
 	size_t	i;
 
-	if (!vec || !vec->total)
+	if (!vec || !vec->size)
 		return (false);
 	i = 0;
 	if (vec->total && vec->is_heap)
