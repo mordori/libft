@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/22 16:59:32 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:55:31 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param size Capacity of the new items array to be allocated.
  * @return True if successful, else false.
  */
-static bool	vector_resize(t_vector *vec, size_t size)
+static inline bool	vector_resize(t_vector *vec, size_t size)
 {
 	void	**items;
 	size_t	i;
@@ -50,7 +50,7 @@ static bool	vector_resize(t_vector *vec, size_t size)
  */
 bool	vector_add(t_vector *vec, void *new)
 {
-	if (!vec)
+	if (!vec || !vec->total)
 		return (false);
 	if (vec->total == vec->size)
 		if (!vector_resize(vec, vec->size * 2))
@@ -72,7 +72,9 @@ bool	vector_add(t_vector *vec, void *new)
  */
 bool	vector_del(t_vector *vec, size_t index)
 {
-	if (!vec || index >= vec->total)
+	const size_t	min_size = 4;
+
+	if (!vec || !vec->total || index >= vec->total)
 		return (false);
 	if (vec->is_heap)
 	{
@@ -85,7 +87,7 @@ bool	vector_del(t_vector *vec, size_t index)
 		++index;
 	}
 	vec->total--;
-	if (vec->size > VECTOR_SIZE && vec->total > 0 && \
+	if (vec->size > min_size && vec->total > 0 && \
 vec->total == vec->size / 4)
 		if (!vector_resize(vec, vec->size / 2))
 			return (false);
@@ -104,10 +106,10 @@ bool	vector_free(t_vector *vec)
 {
 	size_t	i;
 
-	if (!vec)
+	if (!vec || !vec->total)
 		return (false);
 	i = 0;
-	if (vec->is_heap && vec->items)
+	if (vec->total && vec->is_heap)
 	{
 		while (i < vec->total)
 		{
@@ -130,7 +132,7 @@ bool	vector_free(t_vector *vec)
  */
 void	*vector_getlast(t_vector *vec)
 {
-	if (!vec)
+	if (!vec || !vec->total)
 		return (NULL);
 	return (vec->items[vec->total - 1]);
 }

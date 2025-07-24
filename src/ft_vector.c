@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/11 00:49:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:54:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,19 @@
  */
 bool	vector_init(t_vector *vec, bool is_heap)
 {
+	const size_t	min_size = 4;
+
 	if (!vec)
 		return (false);
+	vec->total = 0;
+	vec->size = 0;
+	vec->is_heap = false;
 	vec->items = malloc(sizeof (void *) * VECTOR_SIZE);
 	if (!vec->items)
 		return (false);
 	vec->size = VECTOR_SIZE;
-	vec->total = 0;
+	if (VECTOR_SIZE < min_size)
+		vec->size = min_size;
 	vec->is_heap = is_heap;
 	return (true);
 }
@@ -44,7 +50,7 @@ bool	vector_init(t_vector *vec, bool is_heap)
  */
 bool	vector_set(t_vector *vec, size_t index, void *new)
 {
-	if (!vec || !new)
+	if (!vec || !new || !vec->total)
 		return (false);
 	if (index < vec->total)
 	{
@@ -64,7 +70,7 @@ bool	vector_set(t_vector *vec, size_t index, void *new)
  */
 void	*vector_get(t_vector *vec, size_t index)
 {
-	if (!vec)
+	if (!vec || !vec->total)
 		return (NULL);
 	if (index < vec->total)
 		return (vec->items[index]);
@@ -77,7 +83,7 @@ void	*vector_get(t_vector *vec, size_t index)
  * @param vec Vector to be operated.
  * @return Amount of items added in the vector.
  */
-int	vector_total(t_vector	*vec)
+int	vector_total(t_vector *vec)
 {
 	if (!vec)
 		return (false);
