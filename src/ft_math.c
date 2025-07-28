@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:14:46 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/19 21:15:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/25 20:15:41 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,19 @@ int	ft_imin(int a, int b)
 
 float	ft_normalize(float value, float min, float max)
 {
-	return (clamp01((value - min) / (max - min)));
+	return (ft_clamp01((value - min) / (max - min)));
 }
 
-float	clamp01(float value)
+float	ft_clamp01(float value)
 {
-	if (value <= 0.0f)
-		value = 0.0f;
-	else if (value >= 1.0f)
-		value = 1.0f;
+	return (ft_clamp(value, 0.0f, 1.0f));
+}
+
+float	ft_clamp(float value, float min, float max)
+{
+	if (value <= min)
+		value = min;
+	else if (value >= max)
+		value = max;
 	return (value);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 19:58:10 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/25 20:15:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ float	ft_lerp(float a, float b, float t);
 int		ft_imax(int a, int b);
 int		ft_imin(int a, int b);
 float	ft_normalize(float value, float min, float max);
-float	clamp01(float value);
+float	ft_clamp01(float value);
+float	ft_clamp(float value, float min, float max);
 t_vec2i	vec2i(int x, int y);
 t_vec2i	vec2i_f(float x, float y);
 t_vec2i	vec2i_n(float n);

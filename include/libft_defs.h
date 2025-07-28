@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 19:57:24 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/25 19:50:44 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,10 @@ typedef struct s_quad
 typedef struct s_vertex
 {
 	t_vec4		pos;
+	t_vec4		o_pos;
 	t_vec2i		s;
 	uint32_t	color;
-	float		z;
+	float		depth;
 }				t_vertex;
 
 typedef struct s_transform
