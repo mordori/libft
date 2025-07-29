@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:54:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/25 00:30:55 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:01:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ t_mat4	mat4_translate(t_vec3 t)
 /**
  * Creates a scaling matrix that scales by vector s (x, y, z).
  *
- * [ 1	0	0	tx ]
- * [ 0	1	0	ty ]
- * [ 0	0	1	tz ]
- * [ 0	0	0	1  ]
+ * [ sx	0	0	0 ]
+ * [ 0	sy	0	0 ]
+ * [ 0	0	sz	0 ]
+ * [ 0	0	0	1 ]
  *
  * @param s Vec3 factor vector.
  * @return 4x4 matrix product.
