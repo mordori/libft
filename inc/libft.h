@@ -6,13 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/16 22:57:11 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/07/31 00:45:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "libft_colors.h"
 # include "libft_defs.h"
 # include "libft_io.h"
 # include "libft_list.h"

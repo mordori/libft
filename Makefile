@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/29 19:40:23 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/07/31 02:33:07 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		=libft.a
 CC			=cc
 CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3 -MMD -MP
 
-DIR_INC		=include/
+DIR_INC		=inc/
 DIR_SRC		=src/
 DIR_OBJ		=obj/
 DIR_DEP		=dep/
@@ -38,7 +38,8 @@ SRCS		=$(addprefix $(DIR_SRC), \
 			ft_countdigits.c ft_strchrdup.c ft_get_next_line.c ft_vector.c \
 			ft_vector_utils.c ft_math.c ft_matrix.c ft_matrix_transforms.c \
 			ft_vec4.c ft_vec3.c ft_vec3_2.c ft_matrix_utils.c \
-			ft_vec2.c ft_vec4_2.c ft_vec2i.c ft_vec2i_2.c ft_math_2.c)
+			ft_vec2.c ft_vec4_2.c ft_vec2i.c ft_vec2i_2.c ft_math_2.c \
+			ft_colors.c)
 OBJS		=$(patsubst $(DIR_SRC)%.c, $(DIR_OBJ)%.o, $(SRCS))
 DEPS		=$(patsubst $(DIR_SRC)%.c, $(DIR_DEP)%.d, $(SRCS))
 

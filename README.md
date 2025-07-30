@@ -10,7 +10,7 @@ Library of commonly used standard and additional utility functions from libc rec
 
 > [!TIP]
 > ## 🚀 How to use
-> Working example can be seen in my [fdf](https://github.com/mordori/fdf) project where another Makefile clones and then compiles this library. 
+> Working example can be seen in my [fdf](https://github.com/mordori/fdf) project where another Makefile compiles this library.
 - Clone the repository at the root level of your project.
 ``` git
 git clone https://github.com/mordori/libft.git libft && cd libft
@@ -24,16 +24,16 @@ make
 #include "libft.h"
 ```
 > [!TIP]
-> For more granular inclusion, only add `#include "libft_[CATEGORY].h"` to your files where used. The header categories are found in the include/ directory. For example:
+> For more granular inclusion, only add `#include "libft_[CATEGORY].h"` to your files where used. The header categories are found in the inc/ directory. For example:
 > ``` C
 > #include "libft_io.h"
 > ...
 > ft_printf("Hello! There are %d %s in my fridge.\n", 4, "puddings");
 > ...
 > ```
-- Compile your program together with `libft/libft.a` and `-I libft/include/` flag, e.g.
+- Compile your program together with `libft/libft.a` and `-I libft/inc/` flag, e.g.
 ``` bash
-cc -Wall -Wextra -Werror [YOUR_PROGRAM] libft/libft.a -I libft/include/
+cc -Wall -Wextra -Werror [YOUR_PROGRAM] libft/libft.a -I libft/inc/
 ```
 - To delete all of the compiled files, use:
 ``` Makefile
