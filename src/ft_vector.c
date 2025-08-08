@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/24 22:09:16 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/09 00:21:44 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param is_heap Flag, if the items are to be allocated in heap.
  * @return True if successful, else false.
  */
-bool	vector_init(t_vector *vec, bool is_heap)
+bool	vector_init(t_vector *vec, bool is_heap, bool is_shrink)
 {
 	const size_t	min_size = 4;
 
@@ -28,13 +28,15 @@ bool	vector_init(t_vector *vec, bool is_heap)
 	vec->total = 0;
 	vec->size = 0;
 	vec->is_heap = false;
-	vec->items = malloc(sizeof (void *) * VECTOR_SIZE);
+	vec->is_shrink = true;
+	vec->items = malloc(sizeof(void *) * VECTOR_SIZE);
 	if (!vec->items)
 		return (false);
 	vec->size = VECTOR_SIZE;
 	if (VECTOR_SIZE < min_size)
 		vec->size = min_size;
 	vec->is_heap = is_heap;
+	vec->is_shrink = is_shrink;
 	return (true);
 }
 
@@ -54,7 +56,7 @@ bool	vector_set(t_vector *vec, size_t index, void *new)
 		return (false);
 	if (index < vec->total)
 	{
-		if (vec->is_heap)
+		if (vec->is_heap && vec->is_shrink)
 			free(vec->items[index]);
 		vec->items[index] = new;
 	}
@@ -83,7 +85,7 @@ void	*vector_get(t_vector *vec, size_t index)
  * @param vec Vector to be operated.
  * @return Amount of items added in the vector.
  */
-int	vector_total(t_vector *vec)
+size_t	vector_total(t_vector *vec)
 {
 	if (!vec)
 		return (false);
@@ -96,7 +98,7 @@ int	vector_total(t_vector *vec)
  * @param vec Vector to be operated.
  * @return Capacity of items array in the vector.
  */
-int	vector_size(t_vector *vec)
+size_t	vector_size(t_vector *vec)
 {
 	if (!vec)
 		return (false);

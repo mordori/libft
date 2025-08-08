@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/25 19:50:44 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/09 00:23:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,11 @@ typedef struct s_transform
 	t_vec3	rot;
 	t_vec3	scale;
 }				t_transform;
+
+typedef struct s_pair
+{
+	int32_t	index;
+	int32_t	value;
+}				t_pair;
 
 #endif

@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/07/31 02:33:07 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/09 00:31:43 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ MAKEFLAGS	+= --no-print-directory
 NAME		=libft.a
 
 CC			=cc
-CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3 -MMD -MP
+CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3
 
 DIR_INC		=inc/
 DIR_SRC		=src/
@@ -39,7 +39,7 @@ SRCS		=$(addprefix $(DIR_SRC), \
 			ft_vector_utils.c ft_math.c ft_matrix.c ft_matrix_transforms.c \
 			ft_vec4.c ft_vec3.c ft_vec3_2.c ft_matrix_utils.c \
 			ft_vec2.c ft_vec4_2.c ft_vec2i.c ft_vec2i_2.c ft_math_2.c \
-			ft_colors.c)
+			ft_colors.c ft_vector_utils_2.c)
 OBJS		=$(patsubst $(DIR_SRC)%.c, $(DIR_OBJ)%.o, $(SRCS))
 DEPS		=$(patsubst $(DIR_SRC)%.c, $(DIR_DEP)%.d, $(SRCS))
 
@@ -48,7 +48,7 @@ GREEN		=\033[1;32m
 RED			=\033[1;31m
 COLOR		=\033[0m
 
-all: $(DIR_OBJ) $(NAME)
+all: $(NAME)
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_LIB) $(DIR_OBJ) $(DIR_DEP)
@@ -57,18 +57,18 @@ $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 	@echo "$(YELLOW) [✔] libft.a created $(COLOR)"
 
-$(DIR_OBJ)%.o: $(DIR_SRC)%.c
+$(DIR_OBJ)%.o: $(DIR_SRC)%.c | $(DIR_OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS)
 
 clean:
 	@if [ -d "$(DIR_OBJ)" ]; then rm -rf $(DIR_OBJ) $(DIR_DEP); \
-	echo "$(RED) [-]$(COLOR) removed libft/$(DIR_OBJ)"; \
-	echo "$(RED) [-]$(COLOR) removed libft/$(DIR_DEP)"; \
+		echo "$(RED) [-]$(COLOR) removed libft/$(DIR_OBJ)"; \
+		echo "$(RED) [-]$(COLOR) removed libft/$(DIR_DEP)"; \
 	fi
 
 fclean: clean
 	@if [ -e "$(NAME)" ]; then rm -f $(NAME); \
-	echo "$(RED) [-]$(COLOR) removed libft.a"; \
+		echo "$(RED) [-]$(COLOR) removed libft.a"; \
 	fi
 
 re: fclean all
