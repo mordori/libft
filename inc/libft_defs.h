@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/09 00:23:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/23 00:02:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@
 # include <stdint.h>
 # include <limits.h>
 
+# define ERROR -1
+# define GNL_ERROR -1
+# define GNL_EOF 0
+# define GNL_OK 1
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"
-# define ERROR -1
 # define WHITE 0xFFFFFFFF
 # define BLACK 0x000000FF
 # define RED 0xFF0000FF
