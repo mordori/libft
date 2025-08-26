@@ -8,6 +8,7 @@ Static library of fundamental and additional utility functions from libc recreat
 > [!TIP]
 > ## 🚀 How to use
 > Working example can be seen in my [fdf](https://github.com/mordori/fdf) project where another Makefile compiles this library.
+
 Run the following commands to clone the repository and create `libft.a`.
 ``` bash
 git clone https://github.com/mordori/libft.git libft
