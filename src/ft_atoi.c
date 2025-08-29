@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/27 00:00:15 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/29 23:49:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ int64_t	ft_strtol(char *str, char *end)
 	int		sign;
 	int64_t	number;
 
+	*end = 'e';
+	number = 0;
 	if (!str)
-		return (ERROR);
+		return (number);
 	while (ft_isspace(*str))
 		++str;
 	sign = 1;
 	if ((*str == '-' || *str == '+') && *str++ == '-')
 		sign = -1;
-	*end = 'e';
-	number = 0;
 	while (ft_isdigit(*str))
 	{
 		number = number * 10 + (*str++ - '0');
