@@ -32,6 +32,11 @@ Compile your program together with `libft/libft.a` and `-I libft/inc/` flag, e.g
 ``` bash
 cc -Wall -Wextra -Werror [YOUR_PROGRAM] libft/libft.a -I libft/inc/
 ```
+> [!TIP]
+> Add the following flags in a parent Makefile to quickly compile the objects in parallel
+> ``` Makefile
+> MAKEFLAGS += --no-print-directory -j$(shell nproc)
+> ```
 To delete all of the compiled files, use:
 ``` Makefile
 make fclean
